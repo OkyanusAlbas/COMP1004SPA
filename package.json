@@ -1,0 +1,21 @@
+{
+  "name": "comp1004spa",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "json-server --watch db.json --port 5000",
+    "start": "concurrently \"npm run dev\" \"npm run serve\""
+  },
+  "devDependencies": {
+    "vite": "^6.0.5",
+    "concurrently": "^7.2.1"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3",
+    "zxcvbn": "^4.4.2"
+  }
+}

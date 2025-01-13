@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.title-bar {
+  background-color: #2d3748;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #4c9dff;
+  margin-left: 10px;
+}
+
+nav button {
+  background-color: #f43f5e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 20px auto;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4c9dff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3178c6;
+}
+
+h2 {
+  text-align: center;
+}
