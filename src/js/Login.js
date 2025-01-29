@@ -1,4 +1,5 @@
-export function renderLoginPage() {
+export function renderLoginPage() 
+  {
     document.getElementById('app-content').innerHTML = `
       <h2>Login</h2>
       <form id="login-form">
@@ -12,7 +13,8 @@ export function renderLoginPage() {
     document.getElementById('login-form').addEventListener('submit', handleLogin);
   }
   
-  function handleLogin(event) {
+  function handleLogin(event) 
+  {
     event.preventDefault();
   
     const usernameEmail = document.getElementById('login-username-email').value;
@@ -22,10 +24,12 @@ export function renderLoginPage() {
       .then(res => res.json())
       .then(users => {
         const user = users.find(user => user.email === usernameEmail || user.username === usernameEmail);
-        if (user && user.password === password) {
+        if (user && user.password === password) 
+        {
           localStorage.setItem("username", user.username);
           window.location.hash = '#'; // Change the hash without full page reload
-        } else {
+        } else 
+        {
           alert('Incorrect username/email or password');
         }
       });

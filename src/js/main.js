@@ -1,16 +1,19 @@
 import { renderHomePage, renderLoginPage, renderRegisterPage, handleLogin, handleRegister } from './passwordManager.js';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => 
+{
   const userInfo = localStorage.getItem("username");
   const userInfoSpan = document.getElementById("user-info");
   const logoutBtn = document.getElementById("logout-btn");
   const loginRegisterLink = document.getElementById("login-register-link");
 
-  if (userInfo) {
+  if (userInfo) 
+  {
     userInfoSpan.textContent = `Welcome, ${userInfo}`;
     logoutBtn.style.display = "inline-block";
     loginRegisterLink.textContent = "Your Account";
-  } else {
+  } else 
+  {
     userInfoSpan.textContent = '';
     logoutBtn.style.display = "none";
     loginRegisterLink.textContent = "Login/Register";
@@ -22,28 +25,36 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial route load
   handleRouteChange();
 
-  loginRegisterLink.addEventListener('click', () => {
-    if (userInfo) {
+  loginRegisterLink.addEventListener('click', () => 
+  {
+    if (userInfo) 
+    {
       window.location.href = '/';
-    } else {
+    } else 
+    {
       window.location.href = '#login';
     }
   });
 
-  logoutBtn.addEventListener('click', () => {
+  logoutBtn.addEventListener('click', () => 
+  {
     localStorage.removeItem("username");
     window.location.href = "#";
   });
 });
 
-function handleRouteChange() {
+function handleRouteChange() 
+{
   const hash = window.location.hash;
 
-  if (hash === '#login') {
+  if (hash === '#login') 
+  {
     renderLoginPage();
-  } else if (hash === '#register') {
+  } else if (hash === '#register') 
+  {
     renderRegisterPage();
-  } else {
+  } else 
+  {
     renderHomePage();
   }
 }

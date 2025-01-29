@@ -1,16 +1,19 @@
-export function renderHomePage() {
+export function renderHomePage() 
+{
     document.getElementById('app-content').innerHTML = `
       <h2>Welcome to your Password Manager</h2>
       <button id="add-entry-btn">+ Add New Entry</button>
       <div id="entries"></div>
     `;
   
-    document.getElementById('add-entry-btn').addEventListener('click', () => {
+    document.getElementById('add-entry-btn').addEventListener('click', () => 
+    {
       const title = prompt("Enter the title:");
       const password = prompt("Enter the password:");
       const description = prompt("Enter the description:");
   
-      if (title && password && description) {
+      if (title && password && description) 
+      {
         const entry = { title, password, description };
         savePasswordEntry(entry);
       }
@@ -19,7 +22,8 @@ export function renderHomePage() {
     loadEntries();
   }
   
-  function loadEntries() {
+  function loadEntries() 
+  {
     const username = localStorage.getItem('username');
     fetch(`http://localhost:5000/passwords?user=${username}`)
       .then(res => res.json())
@@ -38,7 +42,8 @@ export function renderHomePage() {
       });
   }
   
-  function savePasswordEntry(entry) {
+  function savePasswordEntry(entry) 
+  {
     const username = localStorage.getItem('username');
     fetch('http://localhost:5000/passwords', {
       method: 'POST',
@@ -46,7 +51,8 @@ export function renderHomePage() {
       headers: { 'Content-Type': 'application/json' }
     })
     .then(res => res.json())
-    .then(() => {
+    .then(() => 
+    {
       loadEntries();
     });
   }

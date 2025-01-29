@@ -1,6 +1,7 @@
 import zxcvbn from 'zxcvbn';
 
-export function renderRegisterPage() {
+export function renderRegisterPage() 
+{
   document.getElementById('app-content').innerHTML = `
     <h2>Register</h2>
     <form id="register-form">
@@ -16,7 +17,8 @@ export function renderRegisterPage() {
   document.getElementById('register-form').addEventListener('submit', handleRegister);
 }
 
-function handleRegister(event) {
+function handleRegister(event) 
+{
   event.preventDefault();
 
   const username = document.getElementById('register-username').value;
@@ -24,13 +26,15 @@ function handleRegister(event) {
   const password = document.getElementById('register-password').value;
   const confirmPassword = document.getElementById('register-confirm-password').value;
 
-  if (password !== confirmPassword) {
+  if (password !== confirmPassword) 
+  {
     alert('Passwords do not match');
     return;
   }
 
   const passwordStrength = zxcvbn(password);
-  if (passwordStrength.score < 3) {
+  if (passwordStrength.score < 3) 
+  {
     alert('Password is too weak');
     return;
   }
@@ -38,17 +42,20 @@ function handleRegister(event) {
   fetch('http://localhost:5000/users?email=' + email)
     .then(res => res.json())
     .then(users => {
-      if (users.length > 0) {
+      if (users.length > 0) 
+      {
         alert('Email is already registered');
         return;
       }
 
-      fetch('http://localhost:5000/users', {
+      fetch('http://localhost:5000/users', 
+      {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' }
       })
-        .then(() => {
+        .then(() => 
+        {
           alert('Registration successful!');
           window.location.hash = '#login'; // After successful registration, go to login page
         });

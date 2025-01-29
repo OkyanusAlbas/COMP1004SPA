@@ -1,19 +1,22 @@
 import zxcvbn from 'zxcvbn';
 
 // Render home page
-export function renderHomePage() {
+export function renderHomePage() 
+{
   document.getElementById('app-content').innerHTML = `
     <h2>Welcome to your Password Manager</h2>
     <button id="add-entry-btn">+ Add New Entry</button>
     <div id="entries"></div>
   `;
 
-  document.getElementById('add-entry-btn').addEventListener('click', () => {
+  document.getElementById('add-entry-btn').addEventListener('click', () => 
+  {
     const title = prompt("Enter the title:");
     const password = prompt("Enter the password:");
     const description = prompt("Enter the description:");
 
-    if (title && password && description) {
+    if (title && password && description) 
+    {
       const entry = { title, password, description };
       savePasswordEntry(entry);
     }
@@ -23,7 +26,8 @@ export function renderHomePage() {
 }
 
 // Render the login form
-export function renderLoginPage() {
+export function renderLoginPage() 
+{
   document.getElementById('app-content').innerHTML = `
     <h2>Login</h2>
     <form id="login-form">
@@ -38,7 +42,8 @@ export function renderLoginPage() {
 }
 
 // Render the register form
-export function renderRegisterPage() {
+export function renderRegisterPage() 
+{
   document.getElementById('app-content').innerHTML = `
     <h2>Register</h2>
     <form id="register-form">
@@ -55,7 +60,8 @@ export function renderRegisterPage() {
 }
 
 // Handle login
-export function handleLogin(event) {
+export function handleLogin(event) 
+{
   event.preventDefault();
 
   const usernameEmail = document.getElementById('login-username-email').value;
@@ -65,17 +71,21 @@ export function handleLogin(event) {
     .then(res => res.json())
     .then(users => {
       const user = users.find(user => user.email === usernameEmail || user.username === usernameEmail);
-      if (user && user.password === password) {
+      if (user && user.password === password) 
+      {
         localStorage.setItem("username", user.username);
         window.location.href = "#";
-      } else {
+      } 
+      else 
+      {
         alert('Incorrect username/email or password');
       }
     });
 }
 
 // Handle registration
-export function handleRegister(event) {
+export function handleRegister(event) 
+{
   event.preventDefault();
 
   const username = document.getElementById('register-username').value;
@@ -83,13 +93,15 @@ export function handleRegister(event) {
   const password = document.getElementById('register-password').value;
   const confirmPassword = document.getElementById('register-confirm-password').value;
 
-  if (password !== confirmPassword) {
+  if (password !== confirmPassword) 
+  {
     alert('Passwords do not match');
     return;
   }
 
   const passwordStrength = zxcvbn(password);
-  if (passwordStrength.score < 3) {
+  if (passwordStrength.score < 3) 
+  {
     alert('Password is too weak');
     return;
   }
@@ -97,17 +109,20 @@ export function handleRegister(event) {
   fetch('http://localhost:5000/users?email=' + email)
     .then(res => res.json())
     .then(users => {
-      if (users.length > 0) {
+      if (users.length > 0) 
+      {
         alert('Email is already registered');
         return;
       }
 
-      fetch('http://localhost:5000/users', {
+      fetch('http://localhost:5000/users', 
+      {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' }
       })
-        .then(() => {
+        .then(() => 
+        {
           alert('Registration successful!');
           window.location.href = '#login';
         });

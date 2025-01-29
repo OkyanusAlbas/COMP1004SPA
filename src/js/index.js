@@ -2,17 +2,20 @@ import { renderHomePage } from './views.js';
 import { renderLoginPage } from './Login.js';
 import { renderRegisterPage } from './Register.js';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => 
+{
   const userInfo = localStorage.getItem("username");
   const userInfoSpan = document.getElementById("user-info");
   const logoutBtn = document.getElementById("logout-btn");
   const loginRegisterLink = document.getElementById("login-register-link");
 
-  if (userInfo) {
+  if (userInfo) 
+  {
     userInfoSpan.textContent = `Welcome, ${userInfo}`;
     logoutBtn.style.display = "inline-block";
     loginRegisterLink.textContent = "Your Account";
-  } else {
+  } else 
+  {
     userInfoSpan.textContent = '';
     logoutBtn.style.display = "none";
     loginRegisterLink.textContent = "Login/Register";
@@ -24,15 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial route load
   handleRouteChange();
 
-  loginRegisterLink.addEventListener('click', () => {
-    if (userInfo) {
+  loginRegisterLink.addEventListener('click', () => 
+  {
+    if (userInfo) 
+    {
       window.location.hash = '#'; // Change the hash to stay on the home page
-    } else {
+    } else 
+    {
       window.location.hash = '#login'; // Navigate to login page
     }
   });
 
-  logoutBtn.addEventListener('click', () => {
+  logoutBtn.addEventListener('click', () => 
+  {
     localStorage.removeItem("username");
     window.location.hash = '#'; // Redirect to home without reloading
   });
