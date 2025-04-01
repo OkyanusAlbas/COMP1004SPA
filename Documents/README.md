@@ -25,3 +25,10 @@ Save
 PS C:\Users\albao\documents\dev
 PROJECT NAME IS COMP1004SPA
 
+GitHub Repository
+Make sure your GitHub repository is regularly updated, and the readme.md file contains the following:
+•	Project Title
+•	Project Vision
+•	Installation Instructions
+•	Key Features
+•	Link to the project repository: [GitHub Repository URL]

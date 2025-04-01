@@ -1,56 +1,65 @@
+/* Apply a clean and readable sans-serif font to the entire body */
 body {
   font-family: Arial, sans-serif;
 }
 
+/* Style for the title bar: dark background with white text, flexbox for layout */
 .title-bar {
-  background-color: #2d3748;
-  color: white;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: #2d3748; /* Dark background color */
+  color: white; /* White text color for contrast */
+  padding: 10px; /* Space inside the title bar */
+  display: flex; /* Flexbox layout for child elements */
+  justify-content: space-between; /* Space out items (e.g., logo, menu) */
+  align-items: center; /* Vertically align items in the center */
 }
 
+/* Style for navigation links: blue color with margin between them */
 nav a {
-  color: #4c9dff;
-  margin-left: 10px;
+  color: #4c9dff; /* Soft blue for clickable links */
+  margin-left: 10px; /* Space between the links */
 }
 
+/* Style for navigation buttons: pink background with white text */
 nav button {
-  background-color: #f43f5e;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
+  background-color: #f43f5e; /* Bold pink background for attention */
+  color: white; /* White text for contrast */
+  border: none; /* No border */
+  padding: 5px 10px; /* Padding for clickable area */
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
+/* Styling the form container: vertically stacked items with fixed width */
 form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  margin: 20px auto;
+  display: flex; /* Flexbox layout to align form elements */
+  flex-direction: column; /* Stack form elements vertically */
+  width: 300px; /* Set a fixed width for the form */
+  margin: 20px auto; /* Center the form horizontally with margin */
 }
 
+/* Styling for input fields: padding, border, and rounded corners */
 input {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 10px; /* Space inside the input fields */
+  margin-bottom: 10px; /* Space below each input */
+  border: 1px solid #ccc; /* Light gray border for input fields */
+  border-radius: 5px; /* Rounded corners for input fields */
 }
 
+/* Styling for regular buttons: blue background with white text */
 button {
-  padding: 10px;
-  background-color: #4c9dff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px; /* Padding for a comfortable button size */
+  background-color: #4c9dff; /* Blue background color for buttons */
+  color: white; /* White text for contrast */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners for buttons */
+  cursor: pointer; /* Change cursor to pointer to indicate interactiveness */
 }
 
+/* Button hover effect: darker blue when hovered over */
 button:hover {
-  background-color: #3178c6;
+  background-color: #3178c6; /* Darker blue background on hover */
 }
 
+/* Styling for h2 headers: centered text alignment */
 h2 {
-  text-align: center;
+  text-align: center; /* Center align the h2 text */
 }
