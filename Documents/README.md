@@ -1,34 +1,109 @@
-look I am making a single page application (SPA) with html javascript and css give me dependencies i should install for back end and front end and edit package.json for both and show me how to run it this project is
-Cyber Security
-The focus of this project is to provide a password account management system for a user
-accessed via a browser.
-Produce a hand coded application whereby an individual can manage their own passwords
-and accounts for different applications. As a minimum your application should provide the
-following functionality:
-• Use local storage to store personal account data such as username and password.
-• Read a JSON file using the format above to identify a matching username in your
-system.
-• Indicate password strength to the end user.
-You will need to determine what additional features this application should have and the
-best way to visualise this information for the user.
-Make Main Page when on top user can register to the website with a registration form and a login form after they log in they will be able to have access to the features of the website each account a user creates will have uniqe settings passwords emails and usernames so when registerin user need to enter Username email password twice. when logging in they will just enter (username or email) and password and login.  
+Steps for Running the App Locally:
 
+    Install Dependencies:
+        Run npm install to install all the dependencies listed in package.json.
+    Start the Development Server:
+        Run npm run dev to start the Vite development server for the front-end.
+    Start the Backend Server:
+        Run npm run serve to start the json-server mock API on port 5000. This will simulate a backend for user and password data.
+    Start the App:
+        Run npm run start to start both the front-end and back-end servers concurrently.
 
-I need a Home page where There is a title bar showing Password Manager
-under it there should be navigation bar Showing Register/Login after when you click on it it will lead you login page if you dont have a account there should be register button in blue that leads you to register page Loginpage(username, email, password) RegisterPage(username, email, password password) it has two password parts because when registering it should check iff bot passwords are correct also add more checks like username is alreadyu taken email is to weak email is already registered, for login page add check wrong username email, wrong password. if you registered it should automaticaly lead you to register page also add a login button in blue in register page also to go back incase they miss clicked make sure they are orderly and in nice vertical fromat form for login and register if you succesfully register data should be written to data.json after you login you go back to home page where instead of Login/Register there should be your account username next to it logout button that logs out for you. ok now after you login web page should display the app i want to make which is you create a box with + button add Title password and description it should also have save button where it saves the settings and changes made for the user no other user should be able to see it also include how to set up dependencies#
-example
-Title:Google
-Password:123
-Description:Emial Password google
-Save
+        # Password Manager
 
-PS C:\Users\albao\documents\dev
-PROJECT NAME IS COMP1004SPA
+## Project Overview
 
-GitHub Repository
-Make sure your GitHub repository is regularly updated, and the readme.md file contains the following:
-•	Project Title
-•	Project Vision
-•	Installation Instructions
-•	Key Features
-•	Link to the project repository: [GitHub Repository URL]
+This project is a Password Manager developed as part of the COMP1004 module. The application provides a secure and user-friendly way to manage passwords for different online accounts. The Password Manager allows users to store, manage, and retrieve their passwords with a focus on security and encryption. 
+
+The application features:
+
+- User authentication (Login/Register)
+- Secure password storage (encrypted)
+- Password strength validation
+- User-friendly interface for managing passwords
+- Password categorization and search functionality
+- Data backup and recovery options
+
+## Project Vision and Background
+
+With the increasing number of online accounts requiring unique passwords, many users resort to weak or reused passwords, compromising security. This Password Manager offers a centralized, secure solution for storing passwords, ensuring that users create strong passwords and protecting sensitive data through encryption.
+
+The goal is to make password management more secure and convenient for individuals looking to protect their online identities.
+
+## Project Features
+
+- **Login/Register System**: User authentication to securely manage and associate passwords with unique users.
+- **Encryption**: Strong encryption to protect user data, ensuring passwords are never stored in plaintext.
+- **Password Management**: Add, edit, delete, and categorize passwords to organize and easily access stored data.
+- **Password Strength Validator**: Ensures users create strong passwords that meet industry-standard criteria.
+- **Backup and Recovery**: Protects user data from loss by offering backup and recovery features.
+
+## Technologies Used
+
+- **Java**: For backend functionality and processing.
+- **HTML & CSS**: For frontend structure and styling.
+- **JSON**: For storing password data temporarily.
+- **GitHub**: For version control and deployment.
+
+## Development Methodology
+
+The project follows an **Agile methodology**, enabling iterative development, flexibility in meeting goals, and frequent improvements. Regular sprint meetings are held for feedback and feature adjustments. The development process focuses on continuous testing to ensure that key features work as expected.
+
+## Installation and Setup
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/OkyanusAlbas/COMP1004SPA.git
+    ```
+
+2. Open the project directory:
+
+    ```bash
+    cd COMP1004SPA
+    ```
+
+3. Open the `index.html` file in your browser to view and interact with the application.
+
+## Testing
+
+During development, the application underwent multiple testing phases. Key features tested included:
+
+- **Login/Register**: Ensured the user can register and log in successfully.
+- **Password Strength**: Tested password validation, ensuring weak passwords are rejected.
+- **Password Storage**: Tested the ability to store and retrieve passwords.
+- **Routing**: Validated that navigation between pages (login/register) is seamless.
+
+**Known Issues:**
+
+- Passwords were stored in plaintext in the JSON file due to technological limitations, which poses a security risk.
+- Login and session management have routing issues, preventing proper user session management.
+
+## Limitations
+
+Due to technological constraints, encryption techniques such as AES or bcrypt were not implemented in this version of the project. This limitation resulted in insecure password storage, which violates best practices for password managers. 
+
+Future improvements will focus on integrating proper encryption for password storage, implementing secure session management, and refining the user interface based on feedback.
+
+## Future Improvements
+
+- **Implement AES Encryption**: To ensure passwords are stored securely.
+- **Session Management**: To handle user sessions more securely and prevent login issues.
+- **Enhance UI/UX**: Provide clearer visual cues, feedback messages, and improve overall navigation.
+- **Strengthen Password Generation**: Implement a randomly generated password feature for user convenience.
+- **Performance Testing**: Conduct load testing to ensure scalability as more passwords are added.
+
+## Conclusion
+
+This project aims to provide users with a simple, secure solution for managing their passwords. Although limited by technological and time constraints, the application successfully meets the basic requirements for password management. Future versions will focus on addressing the security flaws and enhancing the user experience to meet modern standards for password management tools.
+
+## References
+
+- [bcrypt](https://en.wikipedia.org/wiki/Bcrypt)
+- [UK GDPR](https://ico.org.uk/for-organisations/data-protection-and-the-eu/data-protection-and-the-eu-in-detail/the-uk-gdpr/)
+- [W3Schools](https://www.w3schools.com)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+
+## License
+
+This project is licensed under the MIT License.
